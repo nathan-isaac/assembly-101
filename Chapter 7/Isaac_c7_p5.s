@@ -30,7 +30,11 @@
 ;---------------------------------------------------------------------------
 					
 		AREA Sort, CODE
-		ENTRY		
+		ENTRY
+
+		ldr r0, =begin
+loop
+	ldr r4,[r0], #1		
 			
 stop	B	stop		; endless loop at end of program
 
@@ -40,8 +44,8 @@ stop	B	stop		; endless loop at end of program
 
 ALIGN
 begin
-		DCD 0x8fffffff, 0x55555555, 0x44444444, 0x77777777, 0xffffffff
-end	
+		DCB "Hello world", 0
+end_string	
 		END
 
 ;---------------------------------------------------------------------------
