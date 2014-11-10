@@ -32,8 +32,9 @@
 stack_start EQU 0x40001000
    AREA String_sup, CODE
    ENTRY
+   EXPORT __main
 
-start
+__main
    	ldr sp, =stack_start ; Tell where we will place the stack.
                         ; (It goes down (lower addresses from here.)
 

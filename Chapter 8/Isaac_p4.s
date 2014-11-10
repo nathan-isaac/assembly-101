@@ -40,11 +40,11 @@ Start
 
 	ldr r0,=end_list	; load the end address of the code & initialize it as the pointer.
 	ldr r2,=begin	; load the beginning address of the code.
-	mov r3,#0x00000000 ; Initialize r3 to 0
-	mov r3,#0xffffffff ; Initialize r3 to 0
+	;mov r3,#0x00000000 ; Initialize r3 with smallest number
+	;mov r4,#0xffffffff ; Initialize r4 with largest number
 
-   	bl find_largest_sub
-	bl find_smallest_sub
+   	bl find_largest_and_smallest_sub
+	;bl find_smallest_sub
 
 stop 
 	b stop
@@ -52,21 +52,39 @@ stop
 ; This subroutine saves the registers,
 ; messes up the registers locally,
 ; then restores the registers and returns.
-find_largest_sub
+find_largest_and_smallest_sub
    	stmfd sp!, {r0, r2, lr} ; save used registers and the link register (r14)
-   
-loop	
-	ldr r6,[r2],#4 ; load the next data into r6 and post increment r2 for the next data.
-	cmp r6,r3      ; Find out if r6 > r3. result from r6-r3  like subs r7,r6,r3 without r6 necessary.
-	
-	blt no_update  ; If it is no update.
-	mov r3,r6      ; update if r6 is higher than r3.
 
-no_update
-	cmp r0,r2      ;  are we at the end yet
-	bne loop       ; if r7 != 0 then keep looping
-   
-  	ldmfd sp!, {r0, r2, pc} ; pop the stack and return 
+	; foreach numbers as number
+	  	
+	
+		LDR r6, [r2], #4 ; highest
+		MOV r5, r6 ; lowest		  
+
+foreach
+		
+		LDR r4, [r2], #4
+		CMP r4, #0
+		
+		BEQ endforeach
+		
+		CMP r4, r6 ; if r4 > r6 update r6 to new highest
+		BHI higher
+
+		CMP r4, r5 ; if r4 > r5 update r5 to new lowest
+		BLS lower
+
+		B foreach
+
+lower
+		MOV r5, r4
+		B foreach
+
+higher
+		MOV r6, r4
+		B foreach 
+		
+endforeach	  	
 
 ;---------------------------------------------------------------------------
 ; DATA
