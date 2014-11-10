@@ -1,0 +1,1 @@
+--device DARMP --pd "__EVAL SETA 1" -g --apcs=interwork -I "C:\Keil\ARM\INC\Philips" --list "Isaac_p5.lst" --xref -o "Isaac_p5.o" "Isaac_p5.s"

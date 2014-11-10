@@ -25,13 +25,14 @@
 ; EQUATES
 ;---------------------------------------------------------------------------					
 
+stack_start EQU 0x40001000
+
 ;---------------------------------------------------------------------------
 ; CODE 
 ;---------------------------------------------------------------------------
 					
-stack_start EQU 0x40001000
-   AREA find_largest_and_smallest, CODE
 
+   AREA find_largest_and_smallest, CODE
    ENTRY
 
 Start
@@ -46,17 +47,12 @@ Start
    	bl find_largest_and_smallest_sub
 	;bl find_smallest_sub
 
-stop 
-	b stop
 
 ; This subroutine saves the registers,
 ; messes up the registers locally,
 ; then restores the registers and returns.
 find_largest_and_smallest_sub
-   	stmfd sp!, {r0, r2, lr} ; save used registers and the link register (r14)
-
-	; foreach numbers as number
-	  	
+   	stmfd sp!, {r0, r2, lr} ; save used registers and the link register (r14)	  	
 	
 		LDR r6, [r2], #4 ; highest
 		MOV r5, r6 ; lowest		  
@@ -66,7 +62,7 @@ foreach
 		LDR r4, [r2], #4
 		CMP r4, #0
 		
-		BEQ endforeach
+		BEQ stop
 		
 		CMP r4, r6 ; if r4 > r6 update r6 to new highest
 		BHI higher
@@ -84,7 +80,8 @@ higher
 		MOV r6, r4
 		B foreach 
 		
-endforeach	  	
+stop 
+	b stop	  	
 
 ;---------------------------------------------------------------------------
 ; DATA

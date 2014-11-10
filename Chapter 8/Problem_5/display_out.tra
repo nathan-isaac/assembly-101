@@ -1,0 +1,19 @@
+*** Creating Trace Output File 'display_out.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup.o"'
+### List of Objects: adding '"isaac_p5.o"'
+### ADS-LD Command completed:
+--device DARMP "startup.o" "isaac_p5.o" --ro-base 0x00000000 --entry 0x00000000 --rw-base 0x40000000 --strict --autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\display_out.map" -o "display_out.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'display_out.axf'
+### ADS-LD Command File: 'display_out.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'display_out.lnp', Handle=0x00000368
+### Writing '.lnp' file
+### ADS-LD Command file 'display_out.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 1 errors
+### Updating obj list
+### LDADS_file() completed.
