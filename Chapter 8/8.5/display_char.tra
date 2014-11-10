@@ -1,0 +1,18 @@
+*** Creating Trace Output File 'display_char.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup.o"'
+### ADS-LD Command completed:
+--device DARMP "startup.o" --ro-base 0x00000000 --entry 0x00000000 --rw-base 0x40000000 --strict --autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\display_char.map" -o "display_char.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'display_char.axf'
+### ADS-LD Command File: 'display_char.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'display_char.lnp', Handle=0x00000288
+### Writing '.lnp' file
+### ADS-LD Command file 'display_char.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 1 errors
+### Updating obj list
+### LDADS_file() completed.

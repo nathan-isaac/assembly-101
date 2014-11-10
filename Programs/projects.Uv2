@@ -6,6 +6,7 @@ Target (Target 1), 0x0004 // Tools: 'ARM-ADS'
 Group (Source Group 1)
 
 File 1,2,<F:\Chapter 8\Isaac_p5.s><Isaac_p5.s>
+File 1,2,<F:\Chapter 8\8.5\Startup.s><Startup.s>
 
 
 Options 1,0,0  // Target 'Target 1'

@@ -1,0 +1,15 @@
+<html>
+<body>
+<pre>
+<h1>µVision3 Build Log</h1>
+<h2>Project:</h2>
+F:\Chapter 8\8.5\display_char.uv2
+Project File Date:  11/07/2014
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling Startup.s...
+linking...
+display_char.axf: Warning: L6665W: Neither Lib$$Request$$armlib Lib$$Request$$cpplib defined, not searching ARM libraries.
+display_char.axf: Error: L6411W: No compatible library exists with a definition of startup symbol __main.
+Target not created

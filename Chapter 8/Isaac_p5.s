@@ -25,6 +25,14 @@
 ; EQUATES
 ;---------------------------------------------------------------------------					
 
+PINSELO 	EQU 0xE002C000
+IOPIN		EQU 0xE0028000
+off_DIR 	EQU 0x8
+En_RxTx0	EQU 0x5
+En_RxTx1	EQU 0x50000
+U0_bas		EQU 0xE000C000
+U1_bas		EQU 0xE0010000
+
 ;---------------------------------------------------------------------------
 ; CODE 
 ;---------------------------------------------------------------------------
@@ -61,7 +69,9 @@ no_update
 	cmp r0,r2      ;  are we at the end yet
 	bne loop       ; if r7 != 0 then keep looping
    
-  	ldmfd sp!, {r0, r2, pc} ; pop the stack and return 
+  	ldmfd sp!, {r0, r2, pc} ; pop the stack and return
+	
+ 
 
 ;---------------------------------------------------------------------------
 ; DATA
